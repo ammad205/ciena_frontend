@@ -1,0 +1,115 @@
+<div style="float:left; margin-top: 1%; margin-left: 2%;"><h4>Location:&nbsp;<label id="locate-val" style="font-size: 15px;"></label></h4></div>
+<div id="countries-main">
+    <label id="country-location">Location:</label>
+    <div id="countries" style="width: 66%;"></div>
+    <script type="text/javascript" src="/static/js/countries_dropdown.js"></script>
+    <script type="text/javascript">countriesDropdown("countries");</script>
+</div>
+<div id="drop-images" >
+    <!--<div id="drop-first-row" class="row drop-rows" style="margin-left: 5%;">-->
+    <!--<div class="col-lg-3 drop-low-images"><img id="firefly-img-drop" src="/static/images/nfv-images/2a.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2b.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2c.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2d.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--</div>-->
+    <!--<div id="drop-second-row" class="row drop-rows" style="margin-left: 5%;">-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2g.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2h.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2i.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2j.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--</div>-->
+    <!--<div id="drop-third-row" class="row drop-rows" style="margin-left: 5%;">-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2a.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2b.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2c.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2d.png" height="70" width="90" style="opacity:0.2"></div>-->
+    <!--</div>-->
+
+    <div id="security-group">
+        <img id="internet-img-drop" class="security-img-drop" src="/static/images/nfv-images/1M3.png" height="70" width="90" style="opacity:0">
+        <img id="lb-img-drop" class="security-img-drop" src="/static/images/nfv-images/1c3.png" height="70" width="90" style="opacity:0">
+        <img id="firefly-img-drop" class="security-img-drop" src="/static/images/nfv-images/new-nfv-images/1i.png"  style="opacity:0; height: 70px; width: 90px;">
+        <!--<div id="firefly-img-drop1" style="height:70px; width: 90px; margin-left:25%; margin-top:-50%; border:dashed; z-index:99999;">123</div>-->
+    </div>
+    <div id="network-group">
+        <div id="network-group-1"></div>
+        <div id="network-group-2"></div>
+    </div>
+
+
+
+
+</div>
+
+
+
+
+
+<script>
+
+
+             $(function(){
+             /*
+            $("#firefly-img-drop1").click(function(){
+                alert("working");
+                var ac = $("#firefly-img-drop1")
+                ac.oLoader ({
+	                fadeLevel: 0.2,
+                    backgroundColor:'#f00',
+                    fadeInTime: 500,
+                    fadeOutTime: 1000,
+                    fadeLevel: 0.5,
+	                hideAfter: 5000000
+                });
+
+                alert("working-1");
+
+            }); */
+
+              $('#launch-button').click(function(){
+           alert("adada")
+          $.ajax({
+             type: 'POST',
+	     url: 'userHistory',
+	     data: { instance_name: $("#M-name").val(), mngt_ntwrk: $("#M-mi").val(), left_ntwrk: $("#M-li").val(), right_ntwrk: $("#M-ri").val(), telnet:$('#telnet').is(":checked"), ssh:$('#ssh').is(":checked"), netconf:$('#netconf').is(":checked")  },
+             success: function(result){
+              //alert(result)
+             },
+             error: function(result){
+              //alert(result+"error")
+             }
+            });
+
+            
+           $.ajax({
+             		type: 'POST',
+             		url: 'spawnModeler',
+             		data: {instance_name: $("#M-name").val(),  mngt_ntwrk: $("#M-mi").val(), left_ntwrk: $("#M-li").val(), right_ntwrk: $("#M-ri").val(), telnet:$('#telnet').is(":checked"), ssh:$('#ssh').is(":checked"), netconf:$('#netconf').is(":checked")  },
+             		success: function(result){
+
+             		},
+             		error: function(){
+             		}
+                });
+               
+
+
+
+
+/*
+    $('#firefly-img-drop').oLoader({
+      backgroundColor:'transparent',
+      image: '/static/images/ownageLoader/loader2.gif',
+      style: 3,
+      fadeInTime: 500,
+      fadeOutTime: 1000,
+      fadeLevel: 0.5,
+      hideAfter: 10000
+    });
+*/
+
+  });
+  });
+
+
+      </script>

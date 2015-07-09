@@ -1,0 +1,114 @@
+#header-nav{
+    background-color: #7B9ECF;
+    border-color: #7B9ECF;
+    border-radius: 0px;
+    }
+#menu-nav li a{
+    color: white;
+}
+#menu-nav li a span:hover{
+    color: #315F9C;
+    border-bottom: 2px solid #315F9C;
+}
+
+#menu-nav li a span:active{
+    color: #315F9C;
+    border-bottom: 2px solid #315F9C;
+}
+#header-second{
+    margin-top: -20px;
+    background-color:#315F9C;
+    color: white;
+    text-align: center;
+    line-height: 2;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#body-container{
+    height: 1000px;
+    width: 100%;
+}
+#left-pane{
+    height:1000px;
+    width: 30%;
+    float: left;
+    border-right: 1px solid #7B9ECF;
+}
+#right-pane{
+    height:1000px;
+    width: 69%;
+    float: right;
+}
+#countries-main{
+    float: right;
+    margin-right: 2%;
+    margin-top: 1%;
+    width :55%;
+    line-height: 2;
+    background-color: #3C5061;
+    border-radius: 3px;
+}
+#countries{
+    float:right;
+    margin-right:12%;
+    margin-top: 5px;
+    border-radius:0px;
+    width: 66%;
+
+}
+#country-location{
+    margin-left: 3px;
+    margin-top: 5px;
+    color:white;
+}
+#left-images-list{
+    margin-top:15px;
+}
+#left-images-list li{
+    display:block;
+}
+
+.small-img{
+    margin-left:4%;
+}
+.large-img{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.large-img label{
+    color:#133E71;
+}
+.small-img label{
+    font-size: 10px;
+    color:#133E71;
+}
+#main-img-container{
+    background: url('../images/private-cloud_1.jpg');
+    background-size: 100% 80%;
+    background-repeat: no-repeat;
+    height: 54%;
+    margin-left: 13%;
+    margin-top: 10%;
+    width: 70%;
+}
+#img-1{
+    opacity: 0.5;
+    margin-left: 3%;
+    margin-top: 13%;
+}
+#img-2{
+    opacity: 0.5;
+    float:right;
+    margin-right: 35%;
+    margin-top: 1%;
+}
+#img-3{
+    opacity: 0.5;
+    margin-left:12%;
+    margin-top:11%
+}
+#img-4{
+    opacity: 0.5;
+    float:right;
+    margin-right: -42%;
+    margin-top: 13%;
+}

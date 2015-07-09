@@ -1,0 +1,138 @@
+{% extends "nfvo-index.html" %}
+
+
+{% block sidebar %}
+
+
+<script src="/static/js/switch.js"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header" style="color:white;"><strong> <i class="fa fa-sitemap fa-fw"></i>NFV </strong> </h2>
+
+    </div>
+</div>
+
+<div class="row" >
+    <div class="col-lg-3" >
+
+        <div style=" width: 80%; border-right: 2px solid white; margin-top: -7%;">
+            <h4 style="color:white;">Virtual Network Functions</h4>
+            <div class="row" style="height: 100px;">
+                <div class="col-lg-5" style="  height:100%;"><img id="firefly-img" src="/static/images/firewall.png" height="70" width="90" style="z-index:1000"></div>
+                <div class="col-lg-5" style="  height:100%;"><img src="/static/images/router.png" height="70" width="90"></div>
+            </div>
+            <div class="row" style="height: 100px;">
+                <div class="col-lg-5" style="height:100%;"><img src="/static/images/bc.png" height="70" width="90"></div>
+                <div class="col-lg-5" style="height:100%;"><img src="/static/images/internet.png" height="70" width="90"></div>
+            </div>
+            <!--<div class="row" style="height: 100px;">-->
+                <!--<div class="col-lg-5" style="height:100%;"><img src="/static/images/nfv-images/1e3.png" height="70" width="90"></div>-->
+                <!--<div class="col-lg-5" style="height:100%;"><img src="/static/images/nfv-images/1M3.png" height="70" width="90"></div>-->
+            <!--</div>-->
+            <!--<div class="row" style="height: 100px;">-->
+                <!--<div class="col-lg-5" style=" height:100%;"><img src="/static/images/nfv-images/new-nfv-images/1g.png" height="70" width="90"></div>-->
+                <!--<div class="col-lg-5" style="height:100%;"><img src="/static/images/nfv-images/1h3.png" height="70" width="90"></div>-->
+            <!--</div>-->
+            <!--<div class="row" style="height: 100px;">-->
+                <!--<div class="col-lg-5" style=" height:100%;"><img src="/static/images/nfv-images/1a3.png" height="70" width="90"></div>-->
+                <!--<div class="col-lg-5" style="height:100%;"><img src="/static/images/nfv-images/1j3.png" height="70" width="90"></div>-->
+            <!--</div>-->
+            <!--<div class="row" style=" height: 100px;">-->
+                <!--<div class="col-lg-5" style="height:100%;"><img src="/static/images/nfv-images/1k3.png" height="70" width="90"></div>-->
+                <!--<div class="col-lg-5" style="height:100%;"><img src="/static/images/nfv-images/1L3.png" height="70" width="90"></div>-->
+            <!--</div>-->
+        </div>
+
+        <div style=" width: 80%; border-right: 2px solid white; margin-top: -7%;">
+            <h4 style="color:white; text-align:center">Chain Services</h4>
+            <div class="row" style="height: 100px;">
+                <div class="col-lg-5" style="  height:100%;"><img id="firefly-img" src="/static/images/nfv-images/new-nfv-images/1i.png" height="70" width="90" style="z-index:1000"></div>
+                <div class="col-lg-5" style="  height:100%;"><img src="/static/images/nfv-images/new-nfv-images/1h.png" height="70" width="90"></div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div id="nfv-right-pane" class="col-lg-9" style="float:right;">
+
+        <div id="nfv-panel">
+            <ul>
+                <li style="float:left;" class="select-li"><a id="nfv-dash" class="nfv-panel-links select-li-a">NFV Home</a></li>
+                <li class="select-li"><a id="nfv-policy" class="select-li-a">Policy Builder</a></li>
+            </ul>
+        </div>
+
+        <div style="margin-top: 5%; margin-left: 7%;">
+            <!--<div><h4>State:&nbsp;&nbsp;&nbsp;<label>NewYork</label></h4></div>-->
+            <div id="drop-icon-box" style="height:400px; width: 85%; background-color: #F7F7F7;   border-radius: 10px; border: 1px solid 	#3C5061;">
+
+                <!--<div style="float:left; margin-top: 1%; margin-left: 2%;"><h4>State:&nbsp;&nbsp;&nbsp;<label>NewYork</label></h4></div>-->
+                <!--<div id="countries-main">-->
+                <!--<label id="country-location">Location:</label>-->
+                <!--<div id="countries" style="width: 66%;"></div>-->
+                <!--<script type="text/javascript" src="/static/js/countries_dropdown.js"></script>-->
+                <!--<script type="text/javascript">countriesDropdown("countries");</script>-->
+                <!--</div>-->
+                <!--<div id="drop-images" >-->
+                <!--&lt;!&ndash;<div id="drop-first-row" class="row drop-rows" style="margin-left: 5%;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img id="firefly-img-drop" src="/static/images/nfv-images/2a.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2b.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2c.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2d.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div id="drop-second-row" class="row drop-rows" style="margin-left: 5%;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2g.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2h.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2i.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2j.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div id="drop-third-row" class="row drop-rows" style="margin-left: 5%;">&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2a.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2b.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2c.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;<div class="col-lg-3 drop-low-images"><img src="/static/images/nfv-images/2d.png" height="70" width="90" style="opacity:0.2"></div>&ndash;&gt;-->
+                <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                <!--<div id="security-group">-->
+                <!--<div><img id="internet-img-drop" class="security-img-drop" src="/static/images/nfv-images/1M3.png" height="70" width="90" style="opacity:0.2"></div>-->
+                <!--<div><img id="lb-img-drop" class="security-img-drop" src="/static/images/nfv-images/1c3.png" height="70" width="90" style="opacity:0.2"></div>-->
+                <!--<div><img id="firefly-img-drop" class="security-img-drop" src="/static/images/nfv-images/1i3.png" height="70" width="90" style="opacity:0.2"></div>-->
+                <!--</div>-->
+                <!--<div id="network-group">-->
+                <!--<div id="network-group-1"></div>-->
+                <!--<div id="network-group-2"></div>-->
+                <!--</div>-->
+
+
+
+
+                <!--</div>-->
+
+
+                {% include "drop-images-box.html" %}
+
+
+            </div>
+            <!-- -----------spawned VM------------        -->
+            <div id="svml">
+
+
+
+                <!--<div style="background:yellow;" class="row">-->
+                <!--<div class="col-md-8">.col-md-8</div>-->
+                <!--<div class="col-md-4">.col-md-4</div>-->
+                <!--</div>-->
+
+                <!--<div style="margin-left:5px;background:pink;width:84%" class="row"><div class="col-md-12">vm name<div style="" class="pull-right"><strong>x</strong></div></div></div>-->
+
+                <!-- -----------spawned VM------------        -->
+            </div>
+
+        </div>
+    </div>
+    {% include "form/form.html" %}
+
+
+    {% endblock %}

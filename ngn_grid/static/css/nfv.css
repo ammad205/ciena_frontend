@@ -1,0 +1,92 @@
+#nfv-panel{
+    margin-left: 58%;
+}
+#nfv-panel ul li{
+    float: left;
+    display: block;
+    margin-left: 5%;
+    font-size: 120%;
+}
+#nfv-panel ul li a{
+    text-decoration: none;
+    color: #ffffff;
+
+}
+#nfv-panel ul li a:hover{
+    text-decoration: none;
+    display: block;
+    color: #3C5061;
+    border-bottom: 2px solid #3C5061;
+    cursor: pointer;
+}
+#nfv-panel ul li a:active{
+    color: #3C5061;
+    border-bottom: 2px solid #3C5061;
+}
+
+.nfv-panel-links:active{
+    color: #3C5061;
+    border-bottom: 2px solid #3C5061;
+}
+
+
+#drop-images{
+    width: 100%;
+    border-top: 1px solid #3C5061;
+    height: 80%;
+    margin-top: 9%;
+    background: url(../images/nfv-images/flowchart_new1.png);
+    background-size: 97% 95%;
+    background-repeat: no-repeat;
+}
+.drop-rows{
+    margin-top:1%;
+    height: 100px;
+    margin-left:-1.5%;
+}
+.drop-low-images{
+    height:100%;
+}
+#drop-icon-box{
+    border-radius: 50%;
+}
+#security-group{
+    float: left;
+    height: 300px;
+    width: 20%;
+}
+
+#network-group{
+    float: right;
+    height: 245px;
+    margin-right: 4%;
+    margin-top: 5%;
+    width: 60%;
+}
+
+#network-group-1{
+    height: 89px;
+    margin-left: 33%;
+    width: 45%;
+}
+
+#network-group-2{
+    height: 150px;
+    width: 100%;
+}
+.security-img-drop{
+    margin-left: 25%;
+}
+#internet-img-drop{
+    margin-top: 15.2%;
+}
+#lb-img-drop{
+    margin-top: 24%;
+}
+#firefly-img-drop{
+    margin-top:13.2%;
+}
+
+#firefly-img{
+    cursor: pointer;
+}

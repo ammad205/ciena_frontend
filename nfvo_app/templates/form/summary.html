@@ -1,0 +1,244 @@
+
+<style>
+
+    .ml {
+    margin-left:10px
+
+    }
+
+    .mb {
+    margin-bottom:10px;
+    }
+
+    .mt {
+    margin-top:10px;
+    }
+
+</style>
+
+
+<div class="tab-pane fade " id="summary">
+
+
+
+    <div class="panel panel-default mt">
+        <!-- Default panel contents -->
+        <div  class="panel-heading"><i class="fa fa-cog fa-fw"></i>Basic</div>
+
+        <!-- Table -->
+        <table style="text-align:center" class="table">
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Name</strong> </td>
+                <td><strong>Location</strong> </td>
+                <td><strong>Provider</strong></td>
+            </tr>
+            <tr>
+                <td id="name_"></td>
+                <td id="location_"></td>
+                <td id="provider_"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--  -->
+
+
+
+    <!-- 2 Config Panel  -->
+
+    <div class="panel panel-default mt">
+        <!-- Default panel contents -->
+        <div  class="panel-heading"><i class="fa fa-cogs fa-fw"></i>Configuration</div>
+
+        <!-- Table -->
+        <table style="text-align:center" class="table">
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Telnet</strong> </td>
+                <td><strong>SSH</strong> </td>
+                <td><strong>Netconf</strong></td>
+            </tr>
+            <tr>
+                <td id="telnet_"></td>
+                <td id="ssh_"></td>
+                <td id="netconf_"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!---->
+
+
+
+
+
+
+
+
+
+
+    <!-- 3 Network Panel  -->
+
+    <div class="panel panel-default mt">
+        <!-- Default panel contents -->
+        <div  class="panel-heading"><i class="fa fa-sitemap fa-fw"></i>Networking</div>
+
+        <!-- Table -->
+        <table style="text-align:center" class="table">
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>Left Interface</strong> </td>
+                <td><strong>Right Interface</strong> </td>
+                <td><strong>Management Interface</strong></td>
+            </tr>
+            <tr>
+                <td id="left_"></td>
+                <td id="right_"></td>
+                <td id="management_"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!---->
+
+
+
+    <!-- 4 Deplo Panel  -->
+
+    <div class="panel panel-default mt">
+        <!-- Default panel contents -->
+        <div  class="panel-heading"><i class="fa fa-check fa-fw"></i>Deployment</div>
+
+        <!-- Table -->
+        <table style="text-align:center" class="table">
+            <thead>
+
+            </thead>
+            <tbody>
+            <tr>
+                <td><strong>High Availability</strong> </td>
+                <td><strong>Auto-Scaling</strong> </td>
+                <td><strong>Deep Analytics</strong></td>
+            </tr>
+            <tr>
+                <td id="1_"></td>
+                <td id="2_"></td>
+                <td id="3_"></td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!---->
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+            $("#summary-tab").click(function() {
+/* ------------------------------basic-------------------------------- */
+
+            var name=$("#M-name").val();
+            $("#name_").html(name);
+
+            var location=$("#M-location").val();
+            $("#location_").html(location);
+
+            var provider=$("#M-provider").val();
+            $("#provider_").html(provider);
+
+/* -------------------------------configuration------------------------------- */
+
+
+
+           if ($('#telnet').is(":checked"))
+           {$("#telnet_").html('<i class="fa fa-check fa-fw"></i>');}
+            else
+           {$("#telnet_").html("Disabled");}
+
+
+           if ($('#ssh').is(":checked"))
+           {$("#ssh_").html('<i class="fa fa-check fa-fw"></i>');}
+            else
+           {$("#ssh_").html("Disabled");}
+
+
+           if ($('#netconf').is(":checked"))
+           {$("#netconf_").html('<i class="fa fa-check fa-fw"></i>');}
+            else
+           {$("#netconf_").html("Disabled");}
+
+
+/* -------------------------------networking------------------------------- */
+
+            var li=$("#M-li").val();
+            if (li=="Select") {$("#left_").html("-");}else{$("#left_").html(li);}
+
+
+
+            var ri=$("#M-ri").val();
+            if (ri=="Select") {$("#right_").html("-");}else{$("#right_").html(ri);}
+
+
+            var mi=$("#M-mi").val();
+            if (mi=="Select") {$("#management_").html("-");}else{$("#management_").html(mi);}
+
+/* -----------------------------------deployment--------------------------- */
+
+
+            var m11=$("#11").val();
+            if (m11=="Select") {$("#1_").html("-");}else{$("#1_").html(m11);}
+
+
+            var m22=$("#22").val();
+            if (m22=="Select") {$("#2_").html("-");}else{$("#2_").html(m22);}
+
+            var m33=$("#33").val();
+            if (m33=="Select") {$("#3_").html("-");}else{$("#3_").html(m33);}
+
+          /*  var m44=$("#44").val();
+            $("#4_").html(m44);*/
+
+
+
+
+/* -------------------------------------------------------------- */
+
+
+          //  alert($("#M-location").val())
+   /* $("#txtAge").toggle(this.checked);
+      if (this.checked) { $("#sshspan").addClass("fa-link"); $("#sshspan").removeClass("fa-unlink");}
+      else {
+      $("#sshspan").addClass("fa-unlink");
+      $("#sshspan").removeClass("fa-link");
+      }
+*/
+});
+
+
+        </script>

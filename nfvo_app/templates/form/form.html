@@ -1,0 +1,214 @@
+<style>
+    .ammad {
+    margin-bottom:10px;
+    }
+
+    .ammad2 {
+
+    margin-top:10px;
+    color:#3C5061;
+
+    }
+
+    .center {
+    margin-left:25px
+
+    }
+
+    .mb {
+    margin-bottom:20px;
+    }
+
+
+    .mt10px {
+    margin-left:100px;
+    font-size:85%;
+    margin-top:20px;
+
+    }
+
+</style>
+
+<style>
+    .cmn-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+    }
+    .cmn-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    }
+
+
+
+    input.cmn-toggle-round + label {
+    padding: 2px;
+    width: 60px;
+    height: 25px;
+    background-color: #dddddd;
+    border-radius: 30px;
+
+
+    }
+    input.cmn-toggle-round + label:before,
+    input.cmn-toggle-round + label:after {
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    bottom: 1px;
+    content: "";
+    }
+    input.cmn-toggle-round + label:before {
+
+    right: 1px;
+    background: linear-gradient(to bottom right, #596977 , #7F96AA, #99ABBB, #BFCAD4, #7F96AA ,#596977);
+    border-radius: 25px;
+    transition: background 0.9s;
+
+
+    }
+    input.cmn-toggle-round + label:after {
+
+
+    width: 24px;
+    background-color: #fff;
+    border-radius: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: margin 0.4s;
+
+
+    }
+    input.cmn-toggle-round:checked + label:before {
+    background: linear-gradient(to bottom right, #00E600,#00FF00 , 	#66FF66, 	#99FF99, 	#66FF66 ,#00FF00,		#00E600);
+
+    }
+    input.cmn-toggle-round:checked + label:after {
+    margin-left: 35px;
+
+
+
+    }
+
+
+</style>
+
+
+
+
+
+
+
+
+
+<div id="myModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+
+            <!-- ------------------------modal header------------------       -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <div class="col-lg-1" style="'border: 1px solid black'">
+                    <!--<div style=" background-image: url('/static/images/firefly/firefly.png'); height:24px; width:24px; border:1px solid #3C5061; border-radius:1px"> </div>-->
+                </div>
+
+                <h4 style="text-align:center" class="modal-title" id="myModalLabel">Firewall Wizard</h4>
+            </div>
+            <!-- ------------------------modal body------------------       -->
+            <div style="" class="modal-body">
+                <!--inside modal -->
+                <!--background: linear-gradient(to bottom right, #596977 , #7F96AA, #99ABBB, #BFCAD4, #7F96AA ,#596977);-->
+
+
+
+                <!-- -----------------------------------------  -->
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading"><i class="fa fa-wrench fa-fw"></i>
+                                Control Panel
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#basic" data-toggle="tab"><i class="fa fa-cog fa-fw"></i>Basic</a>
+                                    </li>
+                                    <li class=""><a href="#config" data-toggle="tab"><i class="fa fa-gears fa-fw"></i>Configuration</a>
+                                    </li>
+                                    <li class=""><a href="#networking" data-toggle="tab"><i class="fa fa-sitemap fa-fw"></i>Networking</a>
+                                    </li>
+                                    <li class=""><a href="#deployment" data-toggle="tab"><i class="fa fa-compass fa-fw"></i>Deployment</a>
+                                    </li>
+                                    <li id="summary-tab" class=""><a href="#summary" data-toggle="tab"><i class="fa fa-list-alt fa-fw"></i>Summary</a>
+                                    </li>
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    {% include "form/basic.html" %}
+                                    {% include "form/configuration.html" %}
+                                    {% include "form/networking.html" %}
+                                    {% include "form/deployment.html" %}
+                                    {% include "form/summary.html" %}
+
+                                </div>
+                            </div>
+                            <!-- /.panel-body -->
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+
+                </div> <!-- 2nd row ends -->
+
+                <!-- ---------------------------------------------- -->
+
+                <!--inside modal -->
+            </div>
+            <!-- ------------------------modal footer------------------       -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button id="launch-button" type="button" class="btn btn-primary" data-dismiss="modal" >Launch</button>
+            </div>
+            <!-- ------------------------------------------------- -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

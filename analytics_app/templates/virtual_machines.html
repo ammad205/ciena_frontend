@@ -1,0 +1,505 @@
+<br>
+{% include "vmpageheader.html" %}
+
+<script src="/static/javascripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="/static/javascripts/Chart.min.js" type="text/javascript"></script>
+<script src="/static/javascripts/Chart.js" type="text/javascript"></script>
+<script src="/static/javascripts/jquery-1.11.0.js" type="text/javascript"></script>
+<script src="/static/javascripts/sb-admin-2.js" type="text/javascript"></script>
+<script src="/static/javascripts/sb-admin-3.js" type="text/javascript"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <div class="bs-example">
+            <table class="table table-hover  table-striped">
+                <thead>
+                <tr><th>#</th><th>Name</th><th>MAC Address</th><th>VLAN</th><th>IP Address</th><th>Description</th></tr>
+                </thead>
+                <tbody style="cursor:pointer">
+                <tr data-toggle="modal" data-target=".a"><td>1</td><td>VM 172.24.2.3</td><td> 01:19:45:67:89:ab </td><td></td><td>172.24.2.3</td><td>N/A</td></tr>
+                <tr data-toggle="modal" data-target=".a" ><td>2</td><td>VM 172.24.2.4</td><td> 01:14:45:67:90:cl </td><td></td><td>172.24.2.4</td><td>N/A</td></tr>
+                <tr data-toggle="modal" data-target=".a"><td>3</td><td>VM 172.21.4.11</td><td> 01:40:45:63:79:ab </td><td></td><td>172.21.4.11</td><td>N/A</td></tr>
+                <tr data-toggle="modal" data-target=".a"><td>4</td><td>VM 192.168.1.153</td><td> 01:22:46:67:05:ae </td><td></td><td>192.168.1.153</td><td>N/A</td></tr>
+                <tr data-toggle="modal" data-target=".a"><td>5</td><td>VM 192.168.1.155</td><td> 01:23:45:67:89:ab </td><td></td><td>192.168.1.155</td><td>N/A</td></tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade a" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-lg">
+<div class="modal-content">
+
+<ul class="nav nav-tabs" role="tablist">
+    <li  id="l1l" class="active"><a href="#">Overview</a></li>
+    <!--  <li id="l2l"><a href="#">L2</a></li>-->
+    <li id="l3l"><a href="#">L4</a></li>
+    <li id="l4l"><a href="#">L7</a></li>
+    <li id="l5l"><a href="#">Main Website Traffic</a></li>
+</ul>
+
+<div id="l1d">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Details
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Time Interval
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Last 10 min</a>
+                                </li>
+                                <li><a href="#">Last 30 min</a>
+                                </li>
+                                <li><a href="#">Last 60 min</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Custom</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item"><b>Name:</b>VM 172.124.2.3</li>
+                        <li class="list-group-item"><b>MAC:</b>01:14:45:67:90:cl</li>
+                        <li class="list-group-item"><b>IP:</b>172.124.2.3</li>
+
+                    </ul>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="l3d">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Byte Count by TCP UDP ICMP
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Time Interval
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Last 10 min</a>
+                                </li>
+                                <li><a href="#">Last 30 min</a>
+                                </li>
+                                <li><a href="#">Last 60 min</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Custom</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <canvas id="canvas1" height="450" width="850"></canvas>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Packet Count by TCP UDP ICMP
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Time Interval
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Last 10 min</a>
+                                </li>
+                                <li><a href="#">Last 30 min</a>
+                                </li>
+                                <li><a href="#">Last 60 min</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Custom</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <canvas id="canvas2" height="450" width="850"></canvas>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+<div id="l5d">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Packet Count by TCP UDP ICMP
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Time Interval
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Last 10 min</a>
+                                </li>
+                                <li><a href="#">Last 30 min</a>
+                                </li>
+                                <li><a href="#">Last 60 min</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Custom</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <canvas id="canvas3" height="450" width="850"></canvas>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+
+<div id="l4d">
+    <div class="row">
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Packets by HTTP
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Time Interval
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Last 10 min</a>
+                                </li>
+                                <li><a href="#">Last 30 min</a>
+                                </li>
+                                <li><a href="#">Last 60 min</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Custom</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <canvas id="canvas4" height="450" width="850"></canvas>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Bytes by HTTP
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                Time Interval
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu pull-right" role="menu">
+                                <li><a href="#">Last 10 min</a>
+                                </li>
+                                <li><a href="#">Last 30 min</a>
+                                </li>
+                                <li><a href="#">Last 60 min</a>
+                                </li>
+                                <li class="divider"></li>
+                                <li><a href="#">Custom</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <canvas id="canvas5" height="450" width="850"></canvas>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+
+
+</div>
+</div>
+</div>
+<script>
+$( "#l3d" ).hide();$( "#l2d" ).hide();$( "#l4d" ).hide();$( "#l5d" ).hide();
+    $( "#l1l" ).click(function() {
+      $( "#l1l" ).addClass('active');
+      $( "#l3l" ).removeClass('active');$( "#l2l" ).removeClass('active');$( "#l4l" ).removeClass('active');$( "#l5l" ).removeClass('active');
+      $( "#l3d" ).hide();$( "#l2d" ).hide();$( "#l4d" ).hide();$( "#l5d" ).hide();
+     $( "#l1d" ).show();
+    });
+    $( "#l3l" ).click(function() {
+      $( "#l3l" ).addClass('active');
+      $( "#l1l" ).removeClass('active');$( "#l2l" ).removeClass('active');$( "#l4l" ).removeClass('active');$( "#l5l" ).removeClass('active');
+      $( "#l1d" ).hide();$( "#l2d" ).hide();$( "#l4d" ).hide();$( "#l5d" ).hide();
+     $( "#l3d" ).show();
+    });
+
+
+  $( "#l4l" ).click(function() {
+
+      $( "#l4l" ).addClass('active');
+      $( "#l1l" ).removeClass('active');$( "#l2l" ).removeClass('active');$( "#l3l" ).removeClass('active');$( "#l5l" ).removeClass('active');
+      $( "#l1d" ).hide();$( "#l2d" ).hide();$( "#l3d" ).hide();$( "#l5d" ).hide();
+     $( "#l4d" ).show();
+    });
+
+    $( "#l5l" ).click(function() {
+
+      $( "#l5l" ).addClass('active');
+      $( "#l1l" ).removeClass('active');$( "#l2l" ).removeClass('active');$( "#l3l" ).removeClass('active');$( "#l4l" ).removeClass('active');
+      $( "#l1d" ).hide();$( "#l2d" ).hide();$( "#l3d" ).hide();$( "#l4d" ).hide();
+     $( "#l5d" ).show();
+    });
+</script>
+<script>
+
+
+	var bardata1 = {
+    labels: ["TCP", "UDP", "ICMP"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(120,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,187,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [65,28,50]
+        }
+    ]
+    };
+    var bardata2 = {
+    labels: ["TCP", "UDP", "ICMP"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(120,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,187,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [30,79,62]
+        }
+    ]
+    };
+
+
+
+  var ctx = document.getElementById("canvas1").getContext("2d");
+var myNewChart = new Chart(ctx).Bar(bardata1)
+
+
+var ctx = document.getElementById("canvas2").getContext("2d");
+var myNewChart = new Chart(ctx).Bar(bardata2)
+
+var doughnutdata = [
+    {
+        value: 40,
+        color:"#3B5998",
+        highlight: "#FF5A5E",
+        label: "Facebook"
+    },
+    {
+        value: 30,
+        color: "green",
+        highlight: "#5AD3D1",
+        label: "Google"
+    },
+    {
+        value: 20,
+        color: "red",
+        highlight: "#FFC870",
+        label: "Youtube"
+    },
+    {
+        value: 10,
+        color: "#55ACEE",
+        highlight: "#FFC870",
+        label: "Twitter"
+    }
+]
+
+
+
+var ctx = document.getElementById("canvas3").getContext("2d");
+var ctx = new Chart(ctx).Doughnut(doughnutdata);
+
+var linedata1 = {
+    labels: ["19:00", "19:05", "19:10", "19:15", "19:20", "19:25", "19:30"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.2)",
+            strokeColor: "rgba(220,220,220,1)",
+            pointColor: "rgba(220,220,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,220,220,1)",
+            data: [65, 59, 80, 81, 56, 55, 40]
+        }
+    ]
+};
+var ctx = document.getElementById("canvas4").getContext("2d");
+var ctx = new Chart(ctx).Line(linedata1);
+var linedata2 = {
+    labels: ["19:00", "19:05", "19:10", "19:15", "19:20", "19:25", "19:30"],
+    datasets: [
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,110,220,0.2)",
+            strokeColor: "rgba(220,110,220,1)",
+            pointColor: "rgba(220,110,220,1)",
+            pointStrokeColor: "#fff",
+            pointHighlightFill: "#fff",
+            pointHighlightStroke: "rgba(220,110,220,1)",
+            data: [65, 59, 80, 20, 56, 55, 70]
+        }
+    ]
+};
+var ctx = document.getElementById("canvas5").getContext("2d");
+var ctx = new Chart(ctx).Line(linedata2);
+
+
+
+
+</script>
+<script>
+$( "#vm20a" ).click(function() {
+			$.ajax({
+					url : "../../analytics/vmpage20/",
+					data : {},
+					type : "GET",
+					success : function(res) {
+					   //var obj = JSON.parse(res);
+					     //alert(JSON.stringify(obj))
+						$("#page-wrapper").html(res).hide().fadeIn(100);
+					},
+					error : function(res) {
+						//alert(JSON.stringify(res));
+						alert(res)
+						alert()
+					}
+				});
+}); // analytics END
+
+$( "#vm10a" ).click(function() {
+			$.ajax({
+					url : "../../analytics/vmpage10/",
+					data : {},
+					type : "GET",
+					success : function(res) {
+					   //var obj = JSON.parse(res);
+					     //alert(JSON.stringify(obj))
+						$("#page-wrapper").html(res).hide().fadeIn(100);
+					},
+					error : function(res) {
+						//alert(JSON.stringify(res));
+						alert(res)
+						alert()
+					}
+				});
+}); // analytics END
+
+$( "#vm5a" ).click(function() {
+			$.ajax({
+					url : "../../analytics/vmpage5/",
+					data : {},
+					type : "GET",
+					success : function(res) {
+					   //var obj = JSON.parse(res);
+					     //alert(JSON.stringify(obj))
+						$("#page-wrapper").html(res).hide().fadeIn(100);
+					},
+					error : function(res) {
+						//alert(JSON.stringify(res));
+						alert(res)
+						alert()
+					}
+				});
+}); // analytics END
+
+$( "#search" ).click(function() {
+			$.ajax({
+					url : "../../analytics/search/",
+					data : {},
+					type : "GET",
+					success : function(res) {
+					   //var obj = JSON.parse(res);
+					     //alert(JSON.stringify(obj))
+						$("#page-wrapper").html(res).hide().fadeIn(100);
+					},
+					error : function(res) {
+						//alert(JSON.stringify(res));
+						alert(res)
+						alert()
+					}
+				});
+}); // analytics END
+</script>

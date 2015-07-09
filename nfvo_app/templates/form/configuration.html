@@ -1,0 +1,346 @@
+<style>
+
+    .mb {
+    margin-bottom:10px;
+    }
+    .mbb {
+    margin-bottom:15px;
+    }
+    .mt {
+    margin-top:10px;
+    }
+
+    .ml {
+    margin-left:10px
+
+    }
+
+</style>
+
+
+<div class="tab-pane fade " id="config"><!--First Tab Services -->
+
+
+    <!--<div  class="row ">-->
+    <!--<div class="col-lg-4 ">-->
+    <!--<p class="mt10px" style="">Telnet</p>-->
+    <!--</div>-->
+    <!--<div class="col-lg-4 ">-->
+    <!--<p class="mt10px"  >SSH</p>-->
+    <!--</div>-->
+    <!--<div class="col-lg-4">-->
+    <!--<p class="mt10px" >Netconf</p>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--<div  class="row ">-->
+    <h5 class="page-header"><strong>Basic Services</strong></h5>
+    <div  style="margin-top:20px" class="row ">
+
+        <div style="width:10%" class="col-lg-2 ">
+            <input  id="telnet" class="cmn-toggle cmn-toggle-round " type="checkbox">
+            <label  class="mbb" for="telnet"></label>
+
+            <input id="ssh" class="cmn-toggle cmn-toggle-round " type="checkbox">
+            <label class="mbb" for="ssh"></label>
+
+
+            <input  id="netconf" class="cmn-toggle cmn-toggle-round mb" type="checkbox">
+            <label class="mbb"  for="netconf"></label>
+        </div>
+
+        <div  class="col-lg-3 ">
+            <div  class="row mb">
+                <div style="width:75%;" class="  col-lg-1 ">
+                    <span style="text-align:left"class="input-group-addon "><i id="telnetspan" class="fa fa-unlink fa-fw"></i>Telnet</span>
+                </div>
+            </div>
+            <div  class="row mb">
+                <div style="width:75% " class="  col-lg-1 ">
+                    <span style="text-align:left" class="input-group-addon "><i id="sshspan" class="fa fa-unlink fa-fw"></i>SSH root-login</span>
+                </div>
+            </div>
+            <div  class="row mb">
+                <div style="width:75%" class="  col-lg-1 ">
+                    <span id="netconfspan2" style="text-align:left" class="input-group-addon "><i id="netconfspan" class="fa fa-unlink fa-fw"></i>Netconf</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h5 class="page-header"><strong>Host Services</strong></h5>
+    <!-- --------------------- 2nd row                  -->
+
+    <div  style="margin-top:10px" class="row ">
+
+        <div style="width:10%;margin-top:7px" class="col-lg-2 ">
+            <input  id="hn" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label  for="hn"></label>
+
+        </div>
+
+        <div  style="margin-top:4px" class="col-lg-3 ">
+            <div  class="row ">
+                <div style="width:75%;" class="  col-lg-1 ">
+                    <span style="text-align:left"class="input-group-addon "><i id="hnspan" class="fa fa-thumbs-down fa-fw"></i>Hostname</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div  style="display:none" id="hndiv" class="col-lg-7 ">
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input id="hninput" type="text" class="form-control" placeholder="Hostname">
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!---->
+
+
+
+
+
+    <h5 class="page-header"><strong>Advance Services</strong></h5>
+
+    <!-- ---------------------     3rd row      ---------------------------->
+    <div  style="margin-top:10px" class="row ">
+
+        <div style="width:10%;margin-top:7px" class="col-lg-2 ">
+            <input  id="dhcp" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label  for="dhcp"></label>
+
+        </div>
+
+        <div  style="margin-top:4px" class="col-lg-3 ">
+            <div  class="row ">
+                <div style="width:75%;" class="  col-lg-1 ">
+                    <span style="text-align:left"class="input-group-addon "><i id="dhcpspan" class="fa fa-thumbs-down fa-fw"></i>DHCP</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div  style="display:none" id="dhcpdiv" class="col-lg-7 ">
+            <div class="input-group mb">
+                <span class="input-group-addon"><i class="fa fa-cube fa-fw"></i></span>
+                <input id="dhcpinput1" type="text" class="form-control" placeholder="Interface">
+            </div>
+
+
+            <div class="input-group mb">
+                <span class="input-group-addon"><i class="fa fa-codepen fa-fw"></i></span>
+                <input id="dhcpinput2" type="text" class="form-control" placeholder="DHCP Server">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-soundcloud fa-fw"></i></span>
+                <input id="dhcpinput3" type="text" class="form-control" placeholder="Address">
+            </div>
+
+
+        </div>
+
+    </div>
+
+    <!---  ---------------------------------------------------------------------      -->
+
+
+    <!-- --------------------- 4th row   ------------------------------------------->
+    <div  style="margin-top:10px" class="row ">
+
+        <div style="width:10%;margin-top:7px" class="col-lg-2 ">
+            <input  id="snmp" class="cmn-toggle cmn-toggle-round" type="checkbox">
+            <label  for="snmp"></label>
+
+        </div>
+
+        <div  style="margin-top:4px" class="col-lg-3 ">
+            <div  class="row ">
+                <div style="width:75%;" class="  col-lg-1 ">
+                    <span style="text-align:left"class="input-group-addon "><i id="snmpspan" class="fa fa-thumbs-down fa-fw"></i>SNMP</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div  style="display:none" id="snmpdiv" class="col-lg-7 ">
+            <h5 class="page-header"><strong>Identification</strong></h5>
+            <div class="input-group mb">
+                <span class="input-group-addon"><i class="fa fa-info fa-fw"></i></span>
+                <input id="snmpinput1" type="text" class="form-control" placeholder="Contact Info">
+            </div>
+
+
+            <div class="input-group mb">
+                <span class="input-group-addon"><i class="fa fa-file-text fa-fw"></i></span>
+                <input id="snmpinput2" type="text" class="form-control" placeholder="System Description">
+            </div>
+
+
+            <h5 class="page-header"><strong>Community</strong></h5>
+            <div class="input-group mb">
+                <span class="input-group-addon"><i class="fa fa-ticket fa-fw"></i></span>
+                <input id="snmpinput3" type="text" class="form-control" placeholder="Community Name">
+            </div>
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+                <input id="snmpinput4" type="text" class="form-control" placeholder="Authentication">
+            </div>
+
+        </div>
+
+    </div>
+    <!------------------------------------------------------ -->
+
+
+
+
+
+
+
+
+</div>
+<script>
+$("#telnet").click(function() {
+   // $("#txtAge").toggle(this.checked);
+      if (this.checked) { $("#telnetspan").addClass("fa-link"); $("#telnetspan").removeClass("fa-unlink");}
+      else {
+      $("#telnetspan").addClass("fa-unlink");
+      $("#telnetspan").removeClass("fa-link");
+      }
+
+});
+
+$("#ssh").click(function() {
+   // $("#txtAge").toggle(this.checked);
+      if (this.checked) { $("#sshspan").addClass("fa-link"); $("#sshspan").removeClass("fa-unlink");}
+      else {
+      $("#sshspan").addClass("fa-unlink");
+      $("#sshspan").removeClass("fa-link");
+      }
+
+});
+
+
+$("#netconf").click(function() {
+   // $("#txtAge").toggle(this.checked);
+      if (this.checked) { $("#netconfspan").addClass("fa-link"); $("#netconfspan").removeClass("fa-unlink");}
+      else {
+      $("#netconfspan").addClass("fa-unlink");
+      $("#netconfspan").removeClass("fa-link");
+
+      }
+
+});
+
+
+
+$("#hn").click(function() {
+      if (this.checked)
+      { $("#hnspan").addClass("fa-thumbs-up"); $("#hnspan").removeClass("fa-thumbs-down");
+
+      }
+      else {
+      $("#hnspan").addClass("fa-thumbs-down");
+      $("#hnspan").removeClass("fa-thumbs-up");
+
+      }
+    $("#hndiv").toggle();
+});
+
+
+
+
+
+
+$("#dhcp").click(function() {
+      if (this.checked)
+      { $("#dhcpspan").addClass("fa-thumbs-up"); $("#dhcpspan").removeClass("fa-thumbs-down");
+
+      }
+      else {
+      $("#dhcpspan").addClass("fa-thumbs-down");
+      $("#dhcpspan").removeClass("fa-thumbs-up");
+
+      }
+    $("#dhcpdiv").toggle();
+});
+
+
+$("#snmp").click(function() {
+      if (this.checked)
+      { $("#snmpspan").addClass("fa-thumbs-up"); $("#snmpspan").removeClass("fa-thumbs-down");
+
+      }
+      else {
+      $("#snmpspan").addClass("fa-thumbs-down");
+      $("#snmpspan").removeClass("fa-thumbs-up");
+
+      }
+    $("#snmpdiv").toggle();
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---->
+<!--<hr>-->
+<!--<div  class="row  ">-->
+
+<!--<div class="col-lg-2">-->
+<!--<div class="input-group">-->
+<!--<span class="input-group-addon">-->
+<!--<input id="hostnamecb"  type="checkbox">-->
+<!--</span>-->
+<!--<label class="form-control" style="font-size:100%;font-weight: normal;">Hostname</label>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--<div  id="hostnamediv" style="display:none" class="col-lg-6 ">-->
+<!--<div class="form-group">-->
+<!--<label for="hostnameinput" class="col-lg-4 control-label ammad2">Root Login:</label>-->
+<!--<input style="text-color:#3C5061" type="text" class="form-control ammad" id="hostnameinput" placeholder="Hostname">-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<hr>-->
+<!--<div  class="row  ">-->
+
+<!--<div class="col-lg-2">-->
+<!--<div class="input-group">-->
+<!--<span class="input-group-addon">-->
+<!--<input id="dhcpcb"  type="checkbox">-->
+<!--</span>-->
+<!--<label class="form-control" style="font-size:100%;font-weight: normal;">DHCP</label>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</div>   -->
+

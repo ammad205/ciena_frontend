@@ -1,0 +1,98 @@
+{% extends "nfvo-index.html" %}
+
+
+{% block sidebar %}
+
+
+<script src="/static/js/switch.js"></script>
+        <!--<script src="/static/javascripts/jquery-1.11.0.js" type="text/javascript"></script>-->
+           <!--<script src="/static/js/jquery.min.js"></script>-->
+           <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+           <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+           <script src="//cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all-min.js"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header" style="color:white;"><strong> <i class="fa fa-sitemap fa-fw"></i>NFV </strong> </h2>
+
+    </div>
+</div>
+
+<div  >
+    <div  style="width:12%;float:left;min-height: 475px;">
+
+        <!--<div style=" width: 80%; border-right: 2px solid white; margin-top: -7%;">-->
+            <h4 style="color:white;">VNFs</h4>
+
+                <div id="a" class="ditem abs" style="  margin:5px;"><img id="firefly-img2" src="/static/images/firewall.png" height="48" width="48" style="z-index:1000"></div>
+                <div  id="b" class="ditem abs" style="  margin:5px;"><img src="/static/images/router.png" height="48" width="48"></div>
+
+
+                <div id="c" class="ditem abs" style="margin:5px;"><img src="/static/images/bc.png" height="48" width="48"></div>
+                <div id="d" class="ditem abs" style="margin:5px;"><img src="/static/images/internet.png" height="48" width="48"></div>
+
+
+        <!--</div>-->
+
+        <!--<div style=" width: 80%; border-right: 2px solid white; margin-top: -7%;">-->
+            <h4 style="color:white;">Chain Services</h4>
+                <div id="e" class="ditem abs" style=" margin:5px;"><img  id="firefly-img" src="/static/images/nfv-images/new-nfv-images/1i.png" height="48" width="48" style="z-index:1000"></div>
+                <div  id="f" class="ditem abs" style="margin:5px; "><img  src="/static/images/nfv-images/new-nfv-images/1h.png" height="48" width="48"></div>
+
+        <!--</div>-->
+
+
+    </div>
+<<<<<<< HEAD
+    <div id="ab-container" style=" border: 2px solid #3C5061;width:88%;float:left;background:white; min-height: 475px; margin-bottom:9px">
+=======
+    <div  style=" width:88%;float:left;background:white; min-height: 475px; margin-bottom:9px">
+
+        <div id="aaa" style="height:475px; width:125px;background:white; border-right: 1px solid black;float:left;"> </div>
+        <div id="bbb" style="display: flex;flex-direction: column;justify-content: center; min-height:475px; width:450px;background:white; border-right: 1px solid black; float:left;">
+>>>>>>> fd33402747b96666f87182b4549693b1b50acc48
+
+        <div id="aaa" style="min-height:475px; width:125px;background:white;float:left;border: 2px dashed #3C5061;"> </div>
+        <div id="bbb" style="border-right: 0px solid #3C5061;display: flex;flex-direction: column;justify-content: center; min-height:475px; width:450px;background:white; float:left;"></div>
+        <!--<div id="ccc" style="background:green;position:absolute;border-left: 5px solid #3C5061;display: flex;flex-direction: column;justify-content: center; min-height:475px; width:450px;background:white; float:left;"></div>-->
+        <!---->
+         <div id="ccc" style="border-left: 5px solid #3C5061;display: flex;flex-direction: column;justify-content: center; min-height:475px; width:492px;background:white; float:right;"></div>
+
+        <!--<div style='padding:0px; height:10%;margin-left:20px;margin-top:5px;width:100%' class='row'><div class="col-md-10" style="background:pink;"><div class="ditem col-md-1" style="left:-25px;margin:5px;"><img src="/static/images/internet.png" height="48" width="48"></div><div style=' color:#3C5061;padding-top:15px;text-align:center' class='col-md-4'>ammad</div><div style='font-weight:bold; color:#3C5061;padding-top:15px' class='col-md-6'><div style='background-color:#DCDCDC' class='progress'><div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width: 0%'><span class='sr-only'>40% Complete (success)</span></div></div></div>&lt;!&ndash;<div style='font-weight:bold; color:#3C5061;text-align: right;padding-top:15px;' class='col-md-2'>Working...</div>&ndash;&gt;<div style='float:right;color:#3C5061;text-align: center;padding-top:15px;width:5%; margin-right;0px'><strong  style='cursor:pointer'>x</strong></div></div><div class="col-md-1" style="margin:0px;padding:0px;width:5%"><div style=" height:0px; width:0px; border-left: 29px solid pink;border-right: 29px solid transparent;border-bottom: 29px solid transparent;border-top: 29px solid transparent;"></div></div></div>-->
+
+
+
+
+
+        <!---->
+
+
+        <!--<div id="ccc" style="display: flex;flex-direction: column;justify-content: center;min-height:475px; width:65px;background:pink;border-right:2px solid green; float:left;">  </div>-->
+
+    </div>
+
+    </div>
+
+ {% include "form/form.html" %}
+
+
+    {% endblock %}
+  <div style='padding:0px; height:10%;margin-left:20px;margin-top:5px;width:100%' class='row'>
+
+       <div class="col-md-10" style="background:pink;">
+            <div class="ditem col-md-1" style="left:-25px;margin:5px;"><img src="/static/images/internet.png" height="48" width="48"></div>
+            <div style=' color:#3C5061;padding-top:15px;text-align:center' class='col-md-4'>ammad</div>
+            <div style='font-weight:bold; color:#3C5061;padding-top:15px' class='col-md-6'>
+                <div style='background-color:#DCDCDC' class='progress'>
+                    <div class='progress-bar progress-bar-success progress-bar-striped' role='progressbar' aria-valuenow='40' aria-valuemin='0' aria-valuemax='100' style='width: 0%'><span class='sr-only'>40% Complete (success)</span></div>
+                </div>
+            </div>
+            <div style='font-weight:bold; color:#3C5061;text-align: right;padding-top:15px;' class='col-md-2'>Working...</div>
+            <div style='float:right;color:#3C5061;text-align: center;padding-top:15px;width:5%; margin-right;0px'><strong  style='cursor:pointer'>x</strong></div>
+       </div>
+
+       <div class="col-md-1" style="margin:0px;padding:0px;width:5%">
+            <div style=" height:0px; width:0px; border-left: 29px solid pink;border-right: 29px solid transparent;border-bottom: 29px solid transparent;border-top: 29px solid transparent;"></div>
+       </div>
+
+ </div>

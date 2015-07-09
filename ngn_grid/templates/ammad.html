@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NGNgrid</title>
+
+
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="/static/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/bootstrap.min.css">
+
+    <!-- MetisMenu CSS -->
+    <!--<link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/plugins/metisMenu/metisMenu.min.css">
+
+    <!-- Timeline CSS -->
+    <!--<link href="css/plugins/timeline.css" rel="stylesheet">-->
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/plugins/timeline.css">
+
+    <!-- Custom CSS -->
+    <!--<link href="css/sb-admin-2.css" rel="stylesheet">-->
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/sb-admin-2.css">
+    <!-- Morris Charts CSS -->
+    <!--<link href="css/plugins/morris.css" rel="stylesheet">-->
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/plugins/morris.css">
+    <!-- Custom Fonts -->
+    <!--<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" media="screen" href="/static/stylesheets/font-awesome-4.1.0/css/font-awesome.min.css">
+
+
+
+    <link type="text/css" href="/static/css/style.css" rel="stylesheet"/>
+    <link type="text/css" href="/static/css/nfv.css" rel="stylesheet"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+<div style="" id="wrapper">
+
+
+    {% include "panel.html" %}
+
+    <div id="page-wrapper" style="margin-left:0px">
+
+
+        <div id="aam" style="height:300px;width:300px; background:white"></div>
+
+<script>
+$(document).ready(function(){
+  $("#aam").click(function(){
+    $("div").animate({left:'250px'});
+  });
+});
+</script>
+
+
+
+    </div>
+
+
+</div><!-- /#wrapper END-->
+
+
+
+
+
+
+
+
+</body>
+
+</html>

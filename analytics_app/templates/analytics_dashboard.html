@@ -1,0 +1,421 @@
+<!--Start Dashboard 1-->
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="page-header" style="color:white;"><strong> <i class="fa fa-sitemap fa-fw"></i>Analytics Dashboard</strong> </h2>
+
+    </div>
+</div>
+<!--End Dashboard 1-->
+
+<div class="row">
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+        <h5 style="color:white;"><label>Showing data for Virtual Machine:</label></h5>
+    </div>
+    <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
+        <select class="form-control" onchange="optionSelected(this.value)">
+            <option value="" disabled="disabled" selected="selected">Please select a Virtual Machine</option>
+            <optgroup label = "Virtual Machines" id = "51">
+                <!--option value ="vm1">vm1</option-->
+            </optgroup>
+        </select>
+    </div>
+</div>
+
+<!--Start Dashboard 2-->
+
+    <div class="row">
+        <div class="col-lg-12" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Current Status
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+
+    <!--Start Dashboard Tab 4-->
+    <div id="dashboard-meters" class="row" style="visibility: visible; position: relative;">
+        <div class="col-xs-12 col-sm-6 col-md-3 ow-server">
+            <div class="row ow-server-bottom">
+                <div class="knob-slider" >
+                    <div >
+                        <input id="knob-srv-1" class="row knob" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value=""><div class= "row" style="width:100%; text-align: center;">CPU Utilization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 ow-server">
+            <div class="row ow-server-bottom">
+                <div>
+                    <div class="knob-slider">
+                        <input id="knob-srv-2" class="row knob" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value=""><div class= "row" style="width:100%; text-align: center;">Memory Utilization</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 ow-server">
+            <div class="row ow-server-bottom">
+                <div>
+                    <div class="knob-slider">
+                        <input id="knob-srv-3" class="row knob" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value=""><div class= "row" style="width:100%; text-align: center;">Total Inbound Traffic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3 ow-server">
+            <div class="row ow-server-bottom">
+                <div>
+                    <div class="knob-slider">
+                        <input id="knob-srv-4" class="knob row" data-angleOffset="180" data-fgColor="#6AA6D6" data-skin="tron" data-thickness=".2" value=""><div class= "row" style="width:100%; text-align: center;">Total Outbound Traffic<row>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <!--End Dashboard Tab 4-->
+        <div class="clearfix"></div>
+    </div>
+    <!--End Dashboard 2-->
+    <div style="height: 40px;"></div>
+
+    <script src="/static/js/d3.v2.min.js"></script>
+    <script src="/static/js/xcharts.js"></script>
+    <link rel="stylesheet" href="/static/css/xcharts_styles.css">
+
+</div>
+
+                          </div>
+            </div>
+
+</div>
+
+    <div class="row">
+        <div class="col-lg-6" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> CPU Utilization Last 24 Hours
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+
+                    <figure id="myChart2" style="height: 250px; width: 100%; float: left;"></figure>
+{#                    <div class= "row" style="width:100%; text-align: center;">CPU Utilization Last 24 Hours</div>#}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Memory Utilization Last 24 Hours
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+
+                    <figure id="myChart3" style="height: 250px; width: 100%; float: left;"></figure>
+{#                    <div class= "row" style="width:100%; text-align: center;">CPU Utilization Last 24 Hours</div>#}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Individual VM Inbound Traffic Last 24 hours in KB
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+
+                    <figure id="myChart4" style="height: 250px; width: 100%; float: left;"></figure>
+{#                    <div class= "row" style="width:100%; text-align: center;">CPU Utilization Last 24 Hours</div>#}
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6" >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i> Individual VM Outbound Traffic Last 24 hours in KB
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+
+                    <figure id="myChart5" style="height: 250px; width: 100%; float: left;"></figure>
+{#                    <div class= "row" style="width:100%; text-align: center;">CPU Utilization Last 24 Hours</div>#}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<script type="text/javascript">
+// Array for random data for Sparkline
+//var sparkline_arr_1 = SparklineTestData();
+//var sparkline_arr_2 = SparklineTestData();
+//var sparkline_arr_3 = SparklineTestData();
+$(document).ready(function() {
+	// Make all JS-activity for dashboard
+	//DashboardTabChecker();
+	// Load Knob plugin and run callback for draw Knob charts for dashboard(tab-servers)
+	LoadKnobScripts(DrawKnobDashboard);
+	// Load Sparkline plugin and run callback for draw Sparkline charts for dashboard(top of dashboard + plot in tables)
+	//LoadSparkLineScript(DrawSparklineDashboard);
+	// Load Morris plugin and run callback for draw Morris charts for dashboard
+	//LoadMorrisScripts(MorrisDashboard);
+	// Load Springy plugin and run callback for draw network map for dashboard
+	//LoadSpringyScripts(SpringyNetmap);
+	// Make beauty hover in table
+	//$("#ticker-table").beautyHover();
+	// Run script for stock block
+	//CreateStockPage();
+});
+</script>
+
+<script>
+       /* $(".form-control").click(function(){
+		//alert("working")
+		$.ajax({
+			url: 'http://localhost:8000/analytics/uves/virtual-machines',
+			success: function(result){
+				//alert(result)
+			}
+		})
+	}) */
+	
+	// tells the options which was selected
+	function optionSelected(optionName) {
+  		if (optionName=="") return
+		//alert(optionName)
+	}	
+	
+	window.onload = function() {
+		$.ajax({
+			url: 'http://117.20.30.70:8000/analytics/uves/virtual-machines',
+			dataType: 'json',
+			success: function(result){
+				//alert(result)
+				processVMList(result)
+			}
+		})
+		
+		function processVMList(result){
+			select = document.getElementById('51')
+			for (var i = 0; i<result.length; i++){
+    				//alert(result[i].name)
+    				var opt = document.createElement('option')
+    				opt.value = result[i].name
+    				opt.innerHTML = result[i].name
+    				select.appendChild(opt)
+			}
+		}
+
+		$.ajax({
+			url: 'http://117.20.30.70:8000/analytics/uves/virtual-networks',
+			dataType: 'json',
+			success: function(result){
+				//alert(result)
+				processVNList(result)
+			}
+		})
+
+		function processVNList(result){
+			select = document.getElementById('52')
+			for (var i = 0; i<result.length; i++){
+    				//alert(result[i].name)
+    				var opt = document.createElement('option')
+    				opt.value = result[i].name
+    				opt.innerHTML = result[i].name
+    				select.appendChild(opt)
+			}
+		}
+	};
+</script>
+
+<script>
+	var vm_name = ''
+	var state_G3 = 'B'
+	var state_G4 = 'B'
+	$( document ).ready(function() {
+        setInterval(function() {
+	  if (vm_name != '') {
+		processVMInfo(vm_name)
+	  } else {
+	  	//g1.refresh(Math.round(Math.random()*100))
+	  	//g2.refresh(Math.round(Math.random()*100))
+	  	//g3.refresh(Math.round(Math.random()*1024))
+	  	//g4.refresh(Math.round(Math.random()*1024))
+	  }
+        }, 10000);
+      });
+
+
+      $('select').change(function(evt){
+	    if (evt.currentTarget.selectedOptions[0].parentElement.label == "Virtual Machines") {
+		vm_name = evt.currentTarget.selectedOptions[0].label    
+		processVMInfo(vm_name)
+	    } else if (evt.currentTarget.selectedOptions[0].parentElement.label == "Virtual Networks") { 
+		processVNInfo(evt.currentTarget.selectedOptions[0].label)
+	    }
+    	});
+	
+	function processVMInfo(vmName) {
+		$.ajax({
+			url: 'http://117.20.30.70:8000/analytics/getVMStats/' + vmName,
+			dataType: 'json',
+			success: function(result) {
+				//g1.refresh(Math.round(result.cpu_usage))
+				RedrawKnobWithValue($("#knob-srv-1"),Math.round(result.cpu_usage),'%')
+				drawChartWithMax(Math.round(result.cpu_usage),'2',100)
+				if (result.total_memory > 0) {
+					//g2.refresh(Math.round((result.used_memory*100)/result.total_memory))
+					RedrawKnobWithValue($("#knob-srv-2"),Math.round((result.used_memory*100)/result.total_memory),'%')
+					drawChartWithMax(Math.round((result.used_memory*100)/result.total_memory),'3',100)
+				} else {
+					//g2.refresh(0)				
+					RedrawKnobWithValue($("#knob-srv-2"),0,'%')
+					drawChartWithMax(Math.round((result.used_memory*100)/result.total_memory),'3',100)
+				}
+
+				if (result.in_bytes < 1024) {
+					if (state_G3 != 'B') {
+						state_G3 = 'B'
+						//g3.config.label = 'B/hr'
+					}
+					//g3.refresh(Math.round(result.in_bytes))
+					RedrawKnobWithValue($("#knob-srv-3"),Math.round(result.in_bytes),'B/hr')
+				} else if (result.in_bytes > 1024 && result.in_bytes < 1024*1024) { // KB
+					if (state_G3 != 'K') {
+						state_G3 = 'K'
+						//g3.config.label = 'KB/hr'
+					}
+					//g3.refresh(Math.round(result.in_bytes/1024))
+					RedrawKnobWithValue($("#knob-srv-3"),Math.round(result.in_bytes/1024),'KB/hr')
+				} else if (result.in_bytes > 1024*1024 && result.in_bytes < 1024*1024*1024) { // MB
+					if (state_G3 == 'M') {
+						state_G3 = 'M'
+						//g3.config.label = 'MB/hr'
+					}
+					//g3.refresh(Math.round(result.in_bytes/(1024*1024)))
+					RedrawKnobWithValue($("#knob-srv-3"),Math.round(result.in_bytes/(1024*1024)),'MB/hr')
+				} else if (result.in_bytes > 1024*1024*1024) { // GB
+					if (state_G3 == 'G') {
+						state_G3 == 'G'
+						//g3.config.label = 'GB/hr'
+					}
+					//g3.refresh(Math.round(result.in_bytes/(1024*1024*1024)))
+					RedrawKnobWithValue($("#knob-srv-3"),Math.round(result.in_bytes/(1024*1024*1024)),'GB/hr')
+				}
+
+				drawChartWithoutMax(Math.round(result.in_bytes/1024),'4')
+				
+				if (result.out_bytes < 1024) {
+					if (state_G4 != 'B') {
+						state_G4 = 'B'
+						//g4.config.label = 'B/hr'
+					}
+					//g4.refresh(Math.round(result.out_bytes))
+					RedrawKnobWithValue($("#knob-srv-4"),Math.round(result.out_bytes),'B/hr')
+				} else if (result.out_bytes > 1024 && result.out_bytes < 1024*1024) { // KB
+					if (state_G4 != 'K') {
+						state_G4 = 'K'
+						//g4.config.label = 'KB/hr'
+					}
+					//g4.refresh(Math.round(result.out_bytes/1024))
+					RedrawKnobWithValue($("#knob-srv-4"),Math.round(result.out_bytes/1024),'KB/hr')
+				} else if (result.out_bytes > 1024*1024 && result.out_bytes < 1024*1024*1024) { // MB
+					if (state_G4 == 'M') {
+						state_G4 = 'M'
+						//g4.config.label = 'MB/hr'
+					}
+					//g4.refresh(Math.round(result.out_bytes/(1024*1024)))
+					RedrawKnobWithValue($("#knob-srv-4"),Math.round(result.out_bytes/(1024*1024)),'MB/hr')
+				} else if (result.out_bytes > 1024*1024*1024) { // GB
+					if (state_G4 == 'G') {
+						state_G4 == 'G'
+						//g4.config.label = 'GB/hr'
+					}
+					//g4.refresh(Math.round(result.out_bytes/(1024*1024*1024)))
+					RedrawKnobWithValue($("#knob-srv-4"),Math.round(result.out_bytes/(1024*1024*1024)),'GB/hr')
+				}
+				drawChartWithoutMax(Math.round(result.out_bytes/1024),'5')
+				
+				document.getElementById("knob-srv-1").style.fontSize="26px";
+				document.getElementById("knob-srv-2").style.fontSize="26px";
+				document.getElementById("knob-srv-3").style.fontSize="26px";
+				document.getElementById("knob-srv-4").style.fontSize="26px";		
+			}
+		})
+	}
+
+	function processVNInfo(vnName) {
+		//alert("VN Name" + vnName)
+	}
+	
+</script>
+<script>
+	//drawChartWithoutMax(0,'')
+	drawChartWithMax(0,'2')
+	drawChartWithMax(0,'3')
+	drawChartWithoutMax(0,'4')
+	drawChartWithoutMax(0,'5')
+	//drawChartWithoutMax(0,'6')
+	function drawChartWithMax(value,chartNo,yMax) {
+		var data = {
+        "xAxisLabel": "Toppings",
+        "yAxisLabel": "Pizzas Consumed",
+		"yMax":yMax,
+  		"xScale": "time",
+  		"yScale": "linear",
+  		"type": "line",
+  		"main": [
+    	{
+      "className": ".pizza",
+      "data": generateGraphData(value)
+    	}
+  		]
+		};
+		var opts = {
+  		"dataFormatX": function (x) { return d3.time.format('%H').parse(x); },
+  		"tickFormatX": function (x) { return d3.time.format('%H')(x); }
+		};
+		var myChart = new xChart('line', data, '#myChart'+chartNo, opts);	
+	}
+	
+	function drawChartWithoutMax(value,chartNo) {
+		var data = {
+  		"xScale": "time",
+  		"yScale": "linear",
+  		"type": "line",
+  		"main": [
+    	{
+      "className": ".pizza",
+      "data": generateGraphData(value)
+    	}
+  		]
+		};
+		var opts = {
+  		"dataFormatX": function (x) { return d3.time.format('%H').parse(x); },
+  		"tickFormatX": function (x) { return d3.time.format('%H')(x); }
+		};
+		var myChart = new xChart('line', data, '#myChart'+chartNo, opts);	
+	}
+	
+	/*FIXME: function for repeating the graph data to 24 hours (temporary fix:should come from the db)*/
+	function generateGraphData(value) {
+    var data = [];
+    for (var i = 0; i < 24; i++) {
+        	data.push({ "x": i+'',"y": value });
+    }
+   		return data;
+	}
+</script>
